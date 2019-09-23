@@ -67,8 +67,6 @@ def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_thresho
     return scores, boxes, classes
 
 
-# GRADED FUNCTION: yolo_eval
-
 def yolo_eval(yolo_outputs, image_shape = (720., 1280.), max_boxes=10, score_threshold=.6, iou_threshold=.5):
     
     
@@ -128,7 +126,7 @@ def predict(sess, image_file):
     draw_boxes(image, out_scores, out_boxes, out_classes, class_names, colors)
     # Save the predicted bounding box on the image
     image.save(os.path.join("out", image_file), quality=90)
-    # Display the results in the notebook
+ 
     output_image = scipy.misc.imread(os.path.join("out", image_file))
     imshow(output_image)
     
